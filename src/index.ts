@@ -22,6 +22,7 @@ server.listen(8080, () => {
   console.log('Server running on http://localhost:8080/')
 })
 
+// dbuser:password (should be hidden)
 const MONGO_URL = 'mongodb+srv://eric:5Lg8EjCAh6borZsP@cluster0.qxdbhid.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.Promise = Promise
