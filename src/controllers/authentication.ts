@@ -29,7 +29,7 @@ export const login = async (req: express.Request, res: express.Response) => {
     res.cookie('ERIC-AUTH', user.authentication.sessionToken, { domain: 'localhost', path: '/'})
     return res.sendStatus(200).json(user).end()
   } catch (error) {
-    console.log(`REGISTER ERROR: ${error}`)
+    console.log(`LOGIN ERROR: ${error}`)
     return res.sendStatus(400)
   }
 }
@@ -57,7 +57,7 @@ export const register = async (req: express.Request, res: express.Response) => {
         password: authentication(salt, password)
       },
     })
-    return res.send(200).json(newUser).end()
+    return res.sendStatus(200).json(newUser).end()
 
   } catch (error) {
     console.log(`REGISTER ERROR: ${error}`)
