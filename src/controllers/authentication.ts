@@ -26,6 +26,7 @@ export const login = async (req: Request, res: Response) => {
     user.authentication.sessionToken = authentication(salt, user._id.toString())
     await user.save()
 
+    // TO-DO: turn cookie keys dynamic
     res.cookie('ERIC-AUTH', user.authentication.sessionToken, { domain: 'localhost', path: '/'})
     return res.sendStatus(200).json(user).end()
   } catch (error) {
